@@ -24,21 +24,17 @@ public class EmployeeController
         {
             erepo.save(emp);
             return "data saved";
-
         }
         @RequestMapping ("/all")
 
     public List<Employee> alldata()
         {
-
             return erepo.findAll();
         }
         @RequestMapping ("/{id}")
     public Optional byid(@PathVariable int id)
         {
             return erepo.findById(id);
-
-
         }
 
 }
