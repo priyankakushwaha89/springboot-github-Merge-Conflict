@@ -1,10 +1,7 @@
 package com.example.springboot_github_merge_conflict;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -35,6 +32,11 @@ public class EmployeeController
     public Optional byid(@PathVariable int id)
         {
             return erepo.findById(id);
+        }
+        @DeleteMapping("/del/{id}")
+    public String deleteById(@PathVariable int id){
+        erepo.deleteById(id);
+        return "Data Deleted";
         }
 
 }
